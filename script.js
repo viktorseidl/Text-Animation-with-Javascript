@@ -48,8 +48,7 @@ window.addEventListener('load', () => {
             this.y += (this.vy *= this.friction) + (this.originY - this.y) * this.ease;
         }
     }
-    /*
-    50:28 / 1:22:17 */
+
     class Effect {
         constructor(context, canvasWidth, canvasHeight) {
             this.context = context;
@@ -165,48 +164,5 @@ window.addEventListener('load', () => {
         effect.resize(canvas.width, canvas.height);
         effect.wrapText("NFTISMUS NFT MARKETPLACE")
     });
-    //const text = 'Hello, how are you today to se if it is multiline now its already to small to check out';
-    //const textX = canvas.width / 2; //Koordinaten von links (Canvasbreite geteilt durch 2)
-    //const textY = canvas.height / 2; //Koordinaten von Top (Canvashöhe geteilt durch 2)
-    /*const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height); //(x koord, y koord, x koord, y koord)
-    gradient.addColorStop(0.1, 'red');  //gibt die teilung des Gradien an 0.0 start und 1.0 ende
-    gradient.addColorStop(0.5, 'fuchsia');  //gibt die teilung des Gradien an 0.0 start und 1.0 ende
-    gradient.addColorStop(0.8, 'orange');  //gibt die teilung des Gradien an 0.0 start und 1.0 ende
-    ctx.fillStyle = gradient; //'white';  //Farbe der Textausgabe
-    ctx.strokeStyle = 'orangered';  //Farbe der Stroke ausgabe des textes
-    ctx.lineWidth = 3; //Stroke breite angeben
-    ctx.font = '80px Helvetica';
-    ctx.textAlign = 'center';  //für das zentrieren des textes auf der x achse. Ansonsten würde der Text nach START ausgerichtet werden und wäre mehr nach rechts
-    ctx.textBaseline = 'middle';  //für das zentrieren des textes auf der y achse. Ansonsten würde der Text nach START ausgerichtet werden und wäre mehr nach oben
-    //ctx.letterSpacing = '100px';  //Abstand der Buchstaben (unterstützt nicht alle browser)
-    //ctx.fillText(text, textX, textY); //Text ausgeben (Text, Position von links in pixel, Position von Top in pixel)
-    //ctx.strokeText(text, textX, textY);   //Umrandung des Textes ausgeben (Text, Position von links in pixel, Position von Top in pixel)
 
-    const maxTextWidth = canvas.width * 0.88;
-    const lineHeight = 80; //muss die selbe größe wie der text haben
-    const wrapText = (text) => {
-        let linesArray = [];
-        let lineCounter = 0;
-        let line = '';
-        let words = text.split(' ');
-        for (let i = 0; i < words.length; i++) {
-            let testLine = line + words[i] + ' ';
-            //console.log(ctx.measureText(testLine).width);  // measureText().width misst die länge in pixel eines wortes 
-            if (ctx.measureText(testLine).width > maxTextWidth) {
-                line = words[i] + ' ';
-                lineCounter++;
-            } else {
-                line = testLine;
-            }
-            linesArray[lineCounter] = line;
-            //ctx.fillText(testLine, canvas.width / 2, canvas.height / 2 + i * 80);
-        }
-        let textHeight = lineHeight * lineCounter;
-        let textY = canvas.height / 2 - textHeight / 2; //ist für die vertikale ausrichtung auf der Y axis
-        linesArray.forEach((el, index) => {
-            ctx.fillText(el, canvas.width / 2, textY + (index * lineHeight));  // Hier wird pro linie im array die ausgabe gemacht. Dabei sollte am ende mal die Textgröße multipliziert werden.
-        })
-    }
-
-    wrapText('Hello, how are you today to se if it is multiline now its already to small to check out');*/
 });
